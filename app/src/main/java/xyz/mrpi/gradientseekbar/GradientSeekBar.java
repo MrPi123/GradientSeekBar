@@ -50,9 +50,9 @@ public class GradientSeekBar extends View {
     private void initSize() {
 
         mProgressHeight = RudenessScreenHelper.dp2px(getContext(),2);
-        mTextSize = RudenessScreenHelper.pt2px(getContext(),24);
+        mTextSize = RudenessScreenHelper.dp2px(getContext(),12);
 
-        height = (int) (mProgressHeight + mTextSize + RudenessScreenHelper.pt2px(getContext(),10));
+        height = (int) (mProgressHeight + mTextSize + RudenessScreenHelper.dp2px(getContext(),5));
         mCircle = RudenessScreenHelper.dp2px(getContext(),3);
 
         mRectF = new RectF();
@@ -104,9 +104,9 @@ public class GradientSeekBar extends View {
         mText = "已售"+String.valueOf(Math.floor(mProgress*100f))+"%";
 
         if(mProgress<=getXValue()) {
-            canvas.drawText(mText,mProgress*getMeasuredWidth(),RudenessScreenHelper.pt2px(getContext(),24),mTextPaint);
+            canvas.drawText(mText,mProgress*getMeasuredWidth(),RudenessScreenHelper.dp2px(getContext(),12),mTextPaint);
         }else {
-            canvas.drawText(mText,getXValue()*getMeasuredWidth(),RudenessScreenHelper.pt2px(getContext(),24),mTextPaint);
+            canvas.drawText(mText,getXValue()*getMeasuredWidth(),RudenessScreenHelper.dp2px(getContext(),12),mTextPaint);
         }
 
     }
@@ -122,7 +122,7 @@ public class GradientSeekBar extends View {
         WindowManager wm = (WindowManager) getContext()
                 .getSystemService(Context.WINDOW_SERVICE);
 
-        int height = (int) (mProgressHeight + mTextSize + RudenessScreenHelper.pt2px(getContext(),10) + mCircle);
+        int height = (int) (mProgressHeight + mTextSize + RudenessScreenHelper.dp2px(getContext(),5) + mCircle);
         int width = wm.getDefaultDisplay().getWidth();
         setMeasuredDimension(width,height);
 
