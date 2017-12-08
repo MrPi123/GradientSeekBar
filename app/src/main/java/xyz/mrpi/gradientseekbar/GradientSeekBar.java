@@ -118,14 +118,10 @@ public class GradientSeekBar extends View {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-
-        WindowManager wm = (WindowManager) getContext()
-                .getSystemService(Context.WINDOW_SERVICE);
-
-        int height = (int) (mProgressHeight + mTextSize + RudenessScreenHelper.dp2px(getContext(),5) + mCircle);
-        int width = wm.getDefaultDisplay().getWidth();
-        setMeasuredDimension(width,height);
-
+//        int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+        int widthSize = MeasureSpec.getSize(widthMeasureSpec);
+        int heightSize = (int) (this.height + mCircle);
+        setMeasuredDimension(widthSize,heightSize);
     }
 
     ValueAnimator valueAnimator;
